@@ -175,9 +175,7 @@ io.sockets.on("connection", function (socket) {
    //emits goneuser
    socket.on('disconnect', function () {
       io.sockets.in(socket.get('roomIn')).emit("goneUser", socket.get('nickname'));
-      console.log('DATA', socket_data);
       delete socket_data[socket.id];
-      console.log('DATA3', socket_data);
    });
 
    //emits chat
